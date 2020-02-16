@@ -4,7 +4,8 @@
   "description": "My First Mern Project - Travel Guide",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "backend": "nodemon index.js"
   },
   "author": "Sujita Rani Pathipaka",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
-    "mongoose": "^5.9.1"
+    "mongoose": "^5.9.1",
+    "nodemon": "^2.0.2"
   }
 }
