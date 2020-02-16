@@ -1,5 +1,3 @@
-import { Stream } from "stream";
-
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
@@ -21,14 +19,14 @@ const userSchema = mongoose.Schema({
         minlength: 5
     },
     role:{
-        role: number,
+        role: Number,
         default: 0
     },
     token: {
-        type: number
+        type: Number
     },
     tokenExp: {
-        type: number
+        type: Number
     }
 
 });
