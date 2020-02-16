@@ -5,9 +5,10 @@ const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const { User } = require('./models/user')
+const config =require('./config/keys.js');
 
-mongoose.connect('mongodb+srv://mongodb_myTravelGuide:Mongodb@123@react-mern-travel-blog-6kmg7.mongodb.net/test?retryWrites=true&w=majority',
- {useNewUrlParser: true}).then(() => console.log("DB is connected"))
+mongoose.connect(config.mongoURI,
+ { useNewUrlParser: true,  useUnifiedTopology: true}).then(() => console.log("DB IS connected"))
                          .catch(err => console.error(err));
 
 app.get('/', (req, res)  => {
