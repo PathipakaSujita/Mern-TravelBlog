@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "My First Mern Project - Travel Guide",
   "main": "index.js",
+  "engine": {
+    "node": "12.6.0",
+    "npm": "6.10.1"
+  },
   "scripts": {
-    "start": "node index.js",
-    "backend": "nodemon index.js"
+    "start": "node server/index.js",
+    "backend": "nodemon server/index.js"
   },
   "author": "Sujita Rani Pathipaka",
   "license": "ISC",

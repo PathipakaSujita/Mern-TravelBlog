@@ -1,7 +1,7 @@
 
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -76,5 +76,15 @@ app.post('/api/user/login', (req,res) => {
     });
 });
 
-app.listen(port);
+
+app.get("/api/user/logout", auth, (req, res)=> {
+    User.findOneAndUpdate({_id: req.user._id},{token:""}, (err,doc)=> {
+        if(err) return res.json({success: false, err});
+        return res.status(200).send({success: true});
+  });
+});
+
+app.listen(port, ()=> {
+    console.log(`Server is running at  ${port}`);
+});
 
